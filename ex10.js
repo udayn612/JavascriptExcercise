@@ -1,39 +1,32 @@
-let studentsmarks = {
-    "David": 80,
-    "Vinoth": 77,
-    "Divya": 88,
-    "Ishitha": 95,
-    "Thomas":68
-  }
+var student = [
+   {name:"David",marks:80},
+   {name:"Vinoth",marks:77},
+   {name:"Divya",marks:88},
+   {name:"Ishitha",marks:95},
+   {name:"Thomas",marks:68}
+   ];
+console.log("Average marks: "+calculateAvg(student));
 
-  function avg(students) {
-    var count= Object.keys(students).length;
-    let sum = 0;
-    for (let student of Object.values(students)) {
-      sum += student;
-    }
-  
-    return sum/count;
-  }
-studentgrades={}
-  function grades(students)
-  {
-    if(Object.values>=90)
-    for (let marks of Object.values(students)) {
-        if(marks>=90)
-        studentgrades[">90"]='A';
-        else if(marks>=80)
-        studentgrades[">80"]='B';
-        else if(marks>70)
-        studentgrades[">70"]='C';
-        else if(marks>60)
-        studentgrades[">60"]='D';
-        else 
-        studentgrades['<60']='F';
-      } 
-      return studentgrades;
+for(var i=0;i<student.length;i++){
+   console.log(student[i].name+" "+grade(student[i].marks));
+}
+function calculateAvg(student){
+   var sum=0;
+   for(var i=0;i<student.length;i++){
+       sum=sum+student[i].marks;
+   }
+   return sum/student.length;
+}
 
-  }
-
-  console.log(avg(studentsmarks))
-  console.log(grades(studentsmarks))
+function grade(marks){
+   if(marks<60)
+   return 'F';
+   else if(marks<70)
+   return 'D';
+   else if(marks<80)
+   return 'C';
+   else if(marks<90)
+   return 'B';
+   else
+   return 'A';
+}
