@@ -12,11 +12,16 @@ var Team_Leader = myObj.filter(obj => {
   for (var i = 0, len = Team_Leader.length; i < len; i++) {
     delete(Team_Leader[i].occupation);
 }
-console.log(Team_Leader)
+
 var Programmer = myObj.filter(obj => {
     return obj.occupation === "Programmer"
   })
   for (var i = 0, len = Programmer.length; i < len; i++) {
     delete(Programmer[i].occupation);
 }
-  console.log(Programmer)
+var res = {};
+
+res["programmer"]=Programmer;
+ res["Team Leader"]=Team_Leader;
+
+ console.log(res);
