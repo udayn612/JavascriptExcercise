@@ -5,3 +5,18 @@ var myObj =
 {'name':'Damodaran', 'age': 27, 'occupation': "Programmer"},
 {'name':'Krishnakath', 'age': 22, 'occupation': "Programmer"},
 {'name':'Venketraman', 'age': 28, 'occupation': "Programmer"}];
+
+var Team_Leader = myObj.filter(obj => {
+    return obj.occupation === "Team Leader"
+  })
+  for (var i = 0, len = Team_Leader.length; i < len; i++) {
+    delete(Team_Leader[i].occupation);
+}
+console.log(Team_Leader)
+var Programmer = myObj.filter(obj => {
+    return obj.occupation === "Programmer"
+  })
+  for (var i = 0, len = Programmer.length; i < len; i++) {
+    delete(Programmer[i].occupation);
+}
+  console.log(Programmer)
